@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <article>
+        <h1>{{ .Title }}</h1>
+        <p><small>Pubblicato il {{ .Date.Format "2 gennaio 2006" }}</small></p>
+        <div>
+            {{ .Content }}
+        </div>
+    </article>
+    <a href="{{ .Site.BaseURL }}">Torna alla lista degli articoli</a>
+{{ end }}

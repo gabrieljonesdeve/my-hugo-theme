@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <header>
+        <h1>{{ .Site.Title }}</h1>
+        <p>{{ .Site.Params.description }}</p>
+    </header>
+
+    <section>
+        <h2>Articoli Recenti</h2>
+        <ul class="post-list">
+            {{ range first 5 .Pages }}
+                <li class="post-item">
+                    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p>{{ .Summary }}</p>
+                    <p><small>Pubblicato il {{ .Date.Format "2 gennaio 2006" }}</small></p>
+                </li>
+            {{ end }}
+        </ul>
+    </section>
+{{ end }}
